@@ -53,7 +53,6 @@ export const register = async (req, res) => {
         return res.status(201).json({ message: "Registration successful" });
     } catch (error) {
         console.error("Register Error", error)
-        return res.status(500).json({ message: "Registration failed" });
-
+        return res.status(500).json({ message: error.message || "Registration failed" });
     }
 }
